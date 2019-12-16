@@ -73,6 +73,12 @@ proc `->`*(head: IOMap, t: tuple[name: string, list: IOList]): Ends[IOMap] =
     head.next = tail
     result = (head, tail)
 
+# TODO: Adding a list onto an existing list. E.g. when a template call a proc
+# (another template) that returns an IOMap.
+# proc `->`*(list: IOList, map: IOMap): IOList =
+#   Mmmh, this does not seem so straight forward after all! May just have the called
+#   template return a string for now?
+
 proc `->`*(map: Ends[IOMap], t: tuple[name: string, list: IOList]): Ends[IOMap] =
   if map.head.isNil:
     map.tail -> t
