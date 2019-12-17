@@ -370,7 +370,7 @@ macro compile2(input: string): untyped =
   for token in parse(input.strVal):
     echo token
 
-macro compile(input: string): untyped =
+macro compile*(input: string): untyped =
   var
     name, someVar: NimNode
 
@@ -550,7 +550,7 @@ name = "{name}"
 
   result = parseStmt(cachedVars & "\n" & vars & "\n" & body)
 
-macro compileFile(path: string): untyped =
+macro compileFile*(path: string): untyped =
   newCall("compile", newStrLitNode(staticRead(path.strVal)))
 
 
