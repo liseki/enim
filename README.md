@@ -16,7 +16,7 @@ Apart from the templating ability, what's interesting about ENim is its performa
 
 
 ## Sample
-Here's a sample template
+Here's a sample template that happens to be HTML in ```templates/layout.enim```:
 ```
 <!DOCTYPE html>
 <html>
@@ -41,4 +41,14 @@ Here's a sample template
     </footer>
   </body>
 </html>
+```
+
+And in Nim code (```src/user_view.nim```):
+```
+import enim/compile
+import enim/iomap
+
+
+proc userProfile(user: User): IOMap =
+  compileFile("../templates/user_profile.enim") 
 ```
