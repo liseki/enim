@@ -368,9 +368,10 @@ iterator parse(input: string): Token =
     yield token
     token = popTokenQueue()
 
-macro compile2(input: string): untyped =
-  for token in parse(input.strVal):
-    echo token
+when debug:
+  macro compileDebug(input: string): untyped =
+    for token in parse(input.strVal):
+      echo token
 
 macro compile*(input: string): untyped =
   var
