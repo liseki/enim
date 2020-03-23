@@ -80,6 +80,8 @@ proc `$`(t: Token): string =
     "[" & $t.newline & ", " & $t.chompNewline & "]"
 
 proc `&`(a, b: Token): bool =
+  if b.isNil: return
+
   # TODO: This might not go through if the comment is token `a`!
   if b.kind == tkCmd:
     if b.directive == dvComment:
