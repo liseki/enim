@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Using ENim</title>
+    <%= csrf_meta_tags() %>
+    <%= csp_meta_tag() %>
+
+    <%@ content "assets": %>
+      <%= stylesheet_link_tag("application", true) %>
+      <%= javascript_include_tag("application", true) %>
+    <% end %>
+  </head>
+
+  <body>
+    <%@ yield %>
+
+    <footer>
+      <%@ content "footer": %>
+        <p>&copy; 2019 MyCraft Ltd.</p>
+      <% end %>
+    </footer>
+  </body>
+</html>

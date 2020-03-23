@@ -1,0 +1,16 @@
+<div id="main">
+  <div class="intro">
+    <%= funFormat:
+      discard "one more time"
+      discard "and another"
+      discard "and another." %>
+    <%# Nim code initiating a new scope has to be itself on a line. -%>
+    <% if user.isActivated() and
+       user.recentlyActive(): -%>
+    <p><%= user.name %></p>
+      <% if user.isAdmin(): -%>
+    <p class="status">You are currently an administrator of the account.</p>
+      <% end -%>
+    <% end -%>
+  </div>
+</div>

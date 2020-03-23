@@ -1,0 +1,13 @@
+<h1>Listing Users</h1>
+
+<ul>
+<% for user in users: -%>
+  <li><%= user.name %> (<%= $user.id %>)</li>
+<% end -%>
+</ul>
+
+<div>
+  <%# Insert footer here. -%>
+  <%= footer() %>
+  <%= hello() %>
+</div>
